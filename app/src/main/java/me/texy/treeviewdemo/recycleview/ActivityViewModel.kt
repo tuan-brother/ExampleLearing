@@ -1,4 +1,6 @@
 package me.texy.treeviewdemo.recycleview
 
-class ActivityViewModel {
+import androidx.lifecycle.ViewModel
+
+class ActivityViewModel : ViewModel() {
 }

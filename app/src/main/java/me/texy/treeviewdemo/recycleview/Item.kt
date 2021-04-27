@@ -1,3 +1,5 @@
 package me.texy.treeviewdemo.recycleview
 
-data class Item()
+import android.graphics.drawable.Drawable
+
+data class Item(val name: String = "", val address: String = "", val logo: Int? = null)

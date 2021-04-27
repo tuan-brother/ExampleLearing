@@ -4,9 +4,6 @@ import android.view.View
 import me.texy.treeview.base.BaseNodeViewBinder
 import me.texy.treeview.base.BaseNodeViewFactory
 import me.texy.treeviewdemo.R
-import me.texy.treeviewdemo.recycleviewtree.FirstLevelNodeViewBinder
-import me.texy.treeviewdemo.recycleviewtree.SecondLevelNodeViewBinder
-import me.texy.treeviewdemo.recycleviewtree.ThirdLevelNodeViewBinder
 
 /**
  * Created by zxy on 17/4/23.

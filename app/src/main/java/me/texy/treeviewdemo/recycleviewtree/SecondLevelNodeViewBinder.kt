@@ -1,10 +1,12 @@
-package me.texy.treeviewdemo
+package me.texy.treeviewdemo.recycleviewtree
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import me.texy.treeview.TreeNode
 import me.texy.treeview.base.CheckableNodeViewBinder
+import me.texy.treeviewdemo.R
 
 /**
  * Created by zxy on 17/4/23.
@@ -23,6 +25,7 @@ class SecondLevelNodeViewBinder(itemView: View) : CheckableNodeViewBinder(itemVi
     }
 
     override fun onNodeToggled(treeNode: TreeNode, expand: Boolean) {
+        Log.d("TAG333", "onNodeToggled:  " + "item 2")
         if (expand) {
             imageView.animate().rotation(90f).setDuration(200).start()
         } else {

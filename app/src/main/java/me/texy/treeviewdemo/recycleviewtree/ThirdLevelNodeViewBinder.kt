@@ -1,9 +1,10 @@
-package me.texy.treeviewdemo
+package me.texy.treeviewdemo.recycleviewtree
 
 import android.view.View
 import android.widget.TextView
 import me.texy.treeview.TreeNode
 import me.texy.treeview.base.CheckableNodeViewBinder
+import me.texy.treeviewdemo.R
 
 /**
  * Created by zxy on 17/4/23.

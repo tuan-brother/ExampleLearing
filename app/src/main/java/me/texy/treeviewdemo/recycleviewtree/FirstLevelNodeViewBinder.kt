@@ -1,10 +1,13 @@
-package me.texy.treeviewdemo
+package me.texy.treeviewdemo.recycleviewtree
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import me.texy.treeview.TreeNode
 import me.texy.treeview.base.CheckableNodeViewBinder
+import me.texy.treeviewdemo.R
+import me.texy.treeviewdemo.extension.showIf
 import me.texy.treeviewdemo.recycleview.Item
 
 /**
@@ -22,10 +25,12 @@ class FirstLevelNodeViewBinder(itemView: View) : CheckableNodeViewBinder(itemVie
         (treeNode.value as Item).logo?.let { it ->
             imageView.setImageResource(it)
         }
-        imageView.visibility = if (treeNode.hasChild()) View.VISIBLE else View.INVISIBLE
+
+        imageView.showIf(treeNode.hasChild())
     }
 
     override fun onNodeToggled(treeNode: TreeNode, expand: Boolean) {
+        Log.d("TAG333", "onNodeToggled: " + "item 1")
         if (expand) {
             imageView.animate().rotation(90f).setDuration(200).start()
         } else {
