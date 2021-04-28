@@ -1,5 +1,6 @@
 package me.texy.treeviewdemo
 
+import android.app.ProgressDialog.show
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -21,6 +22,7 @@ import me.texy.treeviewdemo.databinding.ActivityMainBinding
 import me.texy.treeviewdemo.recycleview.Item
 import me.texy.treeviewdemo.recycleview.MainRecycleAdapter
 import me.texy.treeviewdemo.recycleviewtree.MyNodeViewFactory
+import java.util.*
 
 open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemClickListener {
     private lateinit var activityMainBinding: ActivityMainBinding
@@ -39,6 +41,8 @@ open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemCl
         initListItem()
         root = TreeNode.root()
         buildTree()
+
+        Log.d("TAG233", "onCreate:  ")
         root?.let { node ->
             treeView = TreeView(node, this, MyNodeViewFactory())
         }
