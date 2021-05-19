@@ -12,13 +12,10 @@
         <action
             android:id="@+id/toBottomSheet"
             app:destination="@id/optionsBottomSheetFragment" />
-        <action
-            android:id="@+id/toSetting"
-            app:destination="@id/fragmentSetting" />
     </fragment>
     <dialog
         android:id="@+id/optionsBottomSheetFragment"
-        android:name="me.texy.treeviewdemo.bottomsheet.OptionsBottomSheetFragment"
+        android:name="me.texy.treeviewdemo.ui.screen.bottomsheet.OptionsBottomSheetFragment"
         android:label="OptionsBottomSheetFragment">
         <argument
             android:name="data"
@@ -31,9 +28,4 @@
             app:argType="integer" />
 
     </dialog>
-    <fragment
-        android:id="@+id/fragmentSetting"
-        android:name="me.texy.treeviewdemo.uitest.FragmentSetting"
-        android:label="fragment_setting2"
-        tools:layout="@layout/fragment_setting2" />
 </navigation>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:background="#009"
     android:layout_height="match_parent"
-    tools:context=".appchat.SettingFragment">
+    tools:context=".ui.screen.hone.MatchesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

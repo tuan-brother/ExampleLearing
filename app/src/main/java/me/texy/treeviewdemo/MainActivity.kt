@@ -1,40 +1,20 @@
 package me.texy.treeviewdemo
 
-import android.app.ProgressDialog.show
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import me.texy.treeview.TreeNode
-import me.texy.treeview.TreeView
-import me.texy.treeviewdemo.appchat.FriendFragment
-import me.texy.treeviewdemo.appchat.SettingFragment
-import me.texy.treeviewdemo.bottomsheet.OptionsBottomSheetFragment
+import dagger.hilt.android.AndroidEntryPoint
 import me.texy.treeviewdemo.databinding.ActivityMainBinding
-import me.texy.treeviewdemo.navigation.HomeFragment
-import me.texy.treeviewdemo.recycleview.Item
-import me.texy.treeviewdemo.recycleview.MainRecycleAdapter
-import me.texy.treeviewdemo.recycleviewtree.MyNodeViewFactory
-import java.util.*
+import me.texy.treeviewdemo.ui.screen.hone.CompetitionFragment
 
-open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
+@AndroidEntryPoint
+open class MainActivity : AppCompatActivity(),
+    BottomNavigationView.OnNavigationItemSelectedListener {
     private lateinit var activityMainBinding: ActivityMainBinding
     var member: Int? = null
     val value by lazy {
@@ -44,12 +24,15 @@ open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemCl
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        test(value)
-        val navHostFragment =
-                supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        findViewById<BottomNavigationView>(R.id.bottom_nav)
-                .setupWithNavController(navController)
+//        test(value)
+//        val navHostFragment =
+//            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//        val navController = navHostFragment.navController
+//        findViewById<BottomNavigationView>(R.id.bottom_nav)
+//            .setupWithNavController(navController)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.nav_host_fragment, CompetitionFragment())
+            .commit()
         activityMainBinding.bottomNav.setOnNavigationItemSelectedListener(this)
     }
 
@@ -62,28 +45,13 @@ open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemCl
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onItemClick(item: String) {
-        TODO("Not yet implemented")
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.mn_friend -> {
-                val homeFragment = FriendFragment()
-                show(homeFragment)
+            R.id.competitions -> {
+                val competitionFragment = CompetitionFragment()
+                show(competitionFragment)
                 return true
             }
-            R.id.mn_home -> {
-                val homeFragment = HomeFragment()
-                show(homeFragment)
-                return true
-            }
-            R.id.mn_setting -> {
-                val homeFragment = SettingFragment()
-                show(homeFragment)
-                return true
-            }
-
         }
         return false
     }
@@ -93,9 +61,9 @@ open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemCl
         val fragmentManager = supportFragmentManager
 
         fragmentManager
-                .beginTransaction()
-                .replace(R.id.nav_host_fragment, fragment)
-                .commit()
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, fragment)
+            .commit()
     }
 
     fun test(value: Any) {
