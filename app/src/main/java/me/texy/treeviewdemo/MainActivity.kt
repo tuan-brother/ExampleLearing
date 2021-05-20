@@ -1,35 +1,39 @@
 package me.texy.treeviewdemo
 
-import android.app.ProgressDialog.show
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
-import me.texy.treeview.TreeNode
-import me.texy.treeview.TreeView
-import me.texy.treeviewdemo.bottomsheet.OptionsBottomSheetFragment
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 import me.texy.treeviewdemo.databinding.ActivityMainBinding
-import me.texy.treeviewdemo.recycleview.Item
-import me.texy.treeviewdemo.recycleview.MainRecycleAdapter
-import me.texy.treeviewdemo.recycleviewtree.MyNodeViewFactory
-import java.util.*
+import me.texy.treeviewdemo.ui.screen.hone.CompetitionFragment
 
-open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemClickListener {
+@AndroidEntryPoint
+open class MainActivity : AppCompatActivity(),
+    BottomNavigationView.OnNavigationItemSelectedListener {
     private lateinit var activityMainBinding: ActivityMainBinding
+    var member: Int? = null
+    val value by lazy {
+        member = 6
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+//        test(value)
+//        val navHostFragment =
+//            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//        val navController = navHostFragment.navController
+//        findViewById<BottomNavigationView>(R.id.bottom_nav)
+//            .setupWithNavController(navController)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.nav_host_fragment, CompetitionFragment())
+            .commit()
+        activityMainBinding.bottomNav.setOnNavigationItemSelectedListener(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -41,7 +45,28 @@ open class MainActivity : AppCompatActivity(), OptionsBottomSheetFragment.ItemCl
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onItemClick(item: String) {
-        TODO("Not yet implemented")
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.competitions -> {
+                val competitionFragment = CompetitionFragment()
+                show(competitionFragment)
+                return true
+            }
+        }
+        return false
+    }
+
+    private fun show(fragment: Fragment) {
+
+        val fragmentManager = supportFragmentManager
+
+        fragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, fragment)
+            .commit()
+    }
+
+    fun test(value: Any) {
+        Log.d("TAG999", "test:  " + member)
     }
 }

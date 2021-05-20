@@ -19,6 +19,14 @@
             android:text="Show BottomSheet"
             android:textSize="18sp" />
 
+        <Button
+            android:id="@+id/btn_go_to_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Setting"
+            android:textSize="16sp"/>
+
         <RelativeLayout
             android:id="@+id/container"
             android:layout_width="match_parent"

@@ -13,9 +13,23 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-154" />
-                            <option name="y" value="-77" />
+                            <option name="x" value="-292" />
+                            <option name="y" value="-83" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="toBottomSheet">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="toSetting">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -26,7 +40,7 @@
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="186" />
-                            <option name="y" value="-50" />
+                            <option name="y" value="-47" />
                           </Point>
                         </option>
                       </LayoutPositions>

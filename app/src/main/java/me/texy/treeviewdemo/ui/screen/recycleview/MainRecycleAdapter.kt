@@ -1,4 +1,4 @@
-package me.texy.treeviewdemo.recycleview
+package me.texy.treeviewdemo.ui.screen.recycleview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
