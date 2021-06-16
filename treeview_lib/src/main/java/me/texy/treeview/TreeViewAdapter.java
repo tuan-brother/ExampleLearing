@@ -12,7 +12,7 @@
  * permissions and limitations under.
  */
 
-package me.texy.treeview;
+package me.threebecause.treeview;
 
 import android.content.Context;
 import android.util.Log;
@@ -27,10 +27,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.texy.treeview.base.BaseNodeViewBinder;
-import me.texy.treeview.base.BaseNodeViewFactory;
-import me.texy.treeview.base.CheckableNodeViewBinder;
-import me.texy.treeview.helper.TreeHelper;
+import me.threebecause.treeview.base.BaseNodeViewBinder;
+import me.threebecause.treeview.base.BaseNodeViewFactory;
+import me.threebecause.treeview.base.CheckableNodeViewBinder;
+import me.threebecause.treeview.helper.TreeHelper;
 
 /**
  * Created by xinyuanzhong on 2017/4/21.

@@ -1,0 +1,3 @@
+package me.threebecause.learning.ui.screen.recycleview
+
+data class Item(val name: String = "", val address: String = "", val logo: Int? = null)

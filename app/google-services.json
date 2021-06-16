@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:120045645320:android:575d4c3ffc8410ad0c6bbd",
         "android_client_info": {
-          "package_name": "me.texy.treeviewdemo"
+          "package_name": "me.threebecause.learning"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "120045645320-qo0m42dgs8tlb1gsf0q8tsqitpppj1ti.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "me.texy.treeviewdemo",
+            "package_name": "me.threebecause.learning",
             "certificate_hash": "f667ac6632adcb97c62a1898c42ad6ee90dc3ffd"
           }
         },

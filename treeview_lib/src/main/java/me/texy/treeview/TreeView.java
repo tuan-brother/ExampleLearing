@@ -12,7 +12,7 @@
  * permissions and limitations under.
  */
 
-package me.texy.treeview;
+package me.threebecause.treeview;
 
 import android.content.Context;
 import android.view.View;
@@ -23,9 +23,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
-import me.texy.treeview.base.BaseNodeViewFactory;
-import me.texy.treeview.base.SelectableTreeAction;
-import me.texy.treeview.helper.TreeHelper;
+import me.threebecause.treeview.base.BaseNodeViewFactory;
+import me.threebecause.treeview.base.SelectableTreeAction;
+import me.threebecause.treeview.helper.TreeHelper;
 
 /**
  * Created by xinyuanzhong on 2017/4/20.
