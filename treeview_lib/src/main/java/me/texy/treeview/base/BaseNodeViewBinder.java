@@ -12,13 +12,13 @@
  * permissions and limitations under.
  */
 
-package me.texy.treeview.base;
+package me.threebecause.treeview.base;
 
 import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
-import me.texy.treeview.TreeNode;
-import me.texy.treeview.TreeView;
+import me.threebecause.treeview.TreeNode;
+import me.threebecause.treeview.TreeView;
 
 /**
  * Created by zxy on 17/4/23.

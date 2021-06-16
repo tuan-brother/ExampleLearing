@@ -1,4 +1,4 @@
-package me.texy.treeview;
+package me.threebecause.treeview;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;

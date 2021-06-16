@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#000"
-        tools:context=".ui.screen.hone.CompetitionFragment">
+        tools:context=".ui.screen.home.competition.CompetitionFragment">
 
         <TextView
             android:layout_width="match_parent"

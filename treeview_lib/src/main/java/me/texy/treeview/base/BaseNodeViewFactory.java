@@ -12,11 +12,11 @@
  * permissions and limitations under.
  */
 
-package me.texy.treeview.base;
+package me.threebecause.treeview.base;
 
 import android.view.View;
 
-import me.texy.treeview.TreeNode;
+import me.threebecause.treeview.TreeNode;
 
 /**
  * Created by zxy on 17/4/23.

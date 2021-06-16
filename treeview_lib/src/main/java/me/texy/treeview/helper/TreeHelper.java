@@ -12,12 +12,12 @@
  * permissions and limitations under.
  */
 
-package me.texy.treeview.helper;
+package me.threebecause.treeview.helper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.texy.treeview.TreeNode;
+import me.threebecause.treeview.TreeNode;
 
 /**
  * Created by xinyuanzhong on 2017/4/27.
